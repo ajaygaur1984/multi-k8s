@@ -10,9 +10,9 @@ script:
 
 after_success:
     - docker build -t ajaygaur1984/multi-client ./client
-    - docker build -t ajaygaur1984/multi-client ./nginx
-    - docker build -t ajaygaur1984/multi-client ./server
-    - docker build -t ajaygaur1984/multi-client ./worker
+    - docker build -t ajaygaur1984/multi-nginx ./nginx
+    - docker build -t ajaygaur1984/multi-server ./server
+    - docker build -t ajaygaur1984/multi-worker ./worker
 
     - echo "$docker_password" | docker login -u "$docker_id" --password-stdin
     ## Take those images and push them to docker hub
