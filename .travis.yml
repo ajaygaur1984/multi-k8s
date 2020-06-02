@@ -14,7 +14,7 @@ after_success:
     - docker build -t ajaygaur1984/multi-server ./server
     - docker build -t ajaygaur1984/multi-worker ./worker
 
-    - echo "$docker_password" | docker login -u "$docker_id" --password-stdin
+    - echo "$Docker_password" | docker login -u "$Docker_id" --password-stdin
     ## Take those images and push them to docker hub
     - docker push ajaygaur1984/multi-client
     - docker push ajaygaur1984/multi-server
